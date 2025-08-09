@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Games Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">PLAY<span class="accent">IT</span></div>
+    <div class="controls">
+      <input id="search" placeholder="Search games or tags..." />
+      <button id="adminBtn">Admin</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="leftpanel">
+      <h3>Filters</h3>
+      <div id="tagList" class="tag-list"></div>
+      <button id="resetFilter" class="small">Reset</button>
+    </aside>
+
+    <section class="games-area">
+      <div id="gamesGrid" class="grid"></div>
+      <div id="empty" class="empty">No games yet — click Admin → Add Game to begin.</div>
+    </section>
+  </main>
+
+  <!-- Player Modal -->
+  <div id="playerModal" class="modal hidden">
+    <div class="modal-content player">
+      <div class="player-header">
+        <div id="playerTitle"></div>
+        <div class="player-actions">
+          <a id="openInNew" target="_blank" rel="noopener">Open in new tab</a>
+          <button id="closePlayer">Close</button>
+        </div>
+      </div>
+      <div class="player-body">
+        <iframe id="gameFrame" sandbox="allow-scripts allow-forms allow-modals allow-pointer-lock allow-same-origin"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Modal -->
+  <div id="adminModal" class="modal hidden">
+    <div class="modal-content admin">
+      <h2>Admin — Manage Games</h2>
+      <form id="addGameForm" class="form">
+        <label>Title<input name="title" required /></label>
+        <label>Thumbnail URL<input name="thumb" placeholder="thumbnail.jpg or https://..." /></label>
+        <label>Game URL<input name="url" placeholder="game/index.html or https://..." required /></label>
+        <label>Tags (comma separated)<input name="tags" placeholder="arcade,platformer" /></label>
+        <div class="row">
+          <button type="submit">Add Game</button>
+          <button id="closeAdmin" type="button" class="alt">Close</button>
+        </div>
+      </form>
+
+      <div class="admin-tools">
+        <h4>Library</h4>
+        <button id="exportBtn">Export JSON</button>
+        <input id="importFile" type="file" accept=".json" />
+        <p class="hint">You can import/export your games JSON.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">Demo portal — host only games you have rights to. Use local http server.</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
