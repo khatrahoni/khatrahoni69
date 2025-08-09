@@ -1,0 +1,16 @@
+[
+  {
+    "id": "g1",
+    "title": "Sample Runner",
+    "thumb": "https://picsum.photos/seed/runner/800/450",
+    "url": "games/sample-runner/index.html",
+    "tags": ["arcade","runner"]
+  },
+  {
+    "id": "g2",
+    "title": "Mini Shooter",
+    "thumb": "https://picsum.photos/seed/shooter/800/450",
+    "url": "games/sample-shooter/index.html",
+    "tags": ["arcade","shooter"]
+  }
+]
